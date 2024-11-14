@@ -6,4 +6,4 @@ class Display:
         self.is_on = is_on
 
     def __str__(self):
-        return f"Display({self.id} >>> {self.message})"
+        return f"Display {self.id} >>> {self.message})"
