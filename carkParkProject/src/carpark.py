@@ -19,6 +19,15 @@ class CarPark:
         elif isinstance(component, Display):
             self.displays.append(component)
 
+    def add_car(self):
+        ...
+
+    def remove_car(self):
+        ...
+
+    def update_display(self):
+        ...
+
     def __str__(self):
         return f'CarPark at {self.location} with a capacity of {self.capacity} bays'
     
