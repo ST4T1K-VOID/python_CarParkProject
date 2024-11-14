@@ -19,6 +19,9 @@ class CarPark:
         elif isinstance(component, Display):
             self.displays.append(component)
 
+    def get_available_bays(self):
+        return (self.capacity-len(self.plates))
+
     def add_car(self, plate):
         self.plates.append(plate)
         self.update_display()
