@@ -24,7 +24,11 @@ class CarPark:
         self.update_display()
 
     def remove_car(self, plate):
-        ...
+        for plate_item in self.plates:
+            if plate_item == plate:
+                self.plates.remove(plate)
+                return
+        raise Exception('plate not found')
 
     def update_display(self):
         ...
