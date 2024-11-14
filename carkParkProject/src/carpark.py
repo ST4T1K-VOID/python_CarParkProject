@@ -19,7 +19,8 @@ class CarPark:
         elif isinstance(component, Display):
             self.displays.append(component)
 
-    def get_available_bays(self):
+    @property
+    def available_bays(self):
         return (self.capacity-len(self.plates))
 
     def add_car(self, plate):
