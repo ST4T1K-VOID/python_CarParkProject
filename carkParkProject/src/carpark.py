@@ -6,3 +6,6 @@ class CarPark:
         self.sensors = sensors
         self.displays = displays
 
+    def __str__(self):
+        return f'CarPark at {self.location} with a capacity of {self.capacity} bays'
+    
