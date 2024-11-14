@@ -6,3 +6,11 @@ class Sensor:
 
     def __str__(self):
         return f'Sensor {self.id} | Status >>> {self.is_active}'
+
+
+class EntrySensor(Sensor):
+    pass
+
+
+class ExitSensor(Sensor):
+    pass
