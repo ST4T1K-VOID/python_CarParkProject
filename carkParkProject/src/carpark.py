@@ -1,6 +1,6 @@
 from display import *
 from sensor import *
-
+import datetime
 
 class CarPark:
     def __init__(self, location='unknown', capacity=20, plates=None, sensors=None, displays=None):
@@ -37,7 +37,9 @@ class CarPark:
         raise Exception('plate not found')
 
     def update_display(self):
-        ...
+        display_info = {"available bays": self.available_bays, "Temperature": 25, "Time": {datetime.datetime.now()}}
+        for display in self.displays:
+            display.update(display_info)
 
     def __str__(self):
         return f'CarPark at {self.location} with a capacity of {self.capacity} bays'
