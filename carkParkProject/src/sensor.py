@@ -8,6 +8,9 @@ class Sensor(ABC):
         self.carpark = carpark
 
     @abstractmethod
+    def update_carpark_status(self, plate):
+        pass
+
     def detect_vehicle(self, plate):
         pass
 
