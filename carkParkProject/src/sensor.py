@@ -34,4 +34,10 @@ class EntrySensor(Sensor):
 
 
 class ExitSensor(Sensor):
-    pass
+    def __init__(self, id, is_active, carpark):
+        super().__init__(id, is_active, carpark)
+
+    def update_carpark_status(self, plate):
+        self.carpark.remove_car(plate)
+
+        print(f"<<Outgoing vehicle>>\n<<Detected Plate: {plate}>>")
