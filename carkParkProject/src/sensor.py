@@ -12,7 +12,8 @@ class Sensor(ABC):
         pass
 
     def detect_vehicle(self, plate):
-        pass
+        plate = self._scan_plate()
+        self.update_carpark_status(plate)
 
     def _scan_plate(self):
         rdm = random.Random()
