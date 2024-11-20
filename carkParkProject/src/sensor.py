@@ -24,7 +24,13 @@ class Sensor(ABC):
 
 
 class EntrySensor(Sensor):
-    pass
+    def __init__(self, id, is_active, carpark):
+        super().__init__(id, is_active, carpark)
+
+    def update_carpark_status(self, plate):
+        self.carpark.add_car(plate)
+
+        print(f"<<Incoming vehicle>>\n<<Detected Plate: {plate}>>")
 
 
 class ExitSensor(Sensor):
