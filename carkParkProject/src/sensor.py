@@ -41,3 +41,6 @@ class ExitSensor(Sensor):
         self.carpark.remove_car(plate)
 
         print(f"<<Outgoing vehicle>>\n<<Detected Plate: {plate}>>")
+        
+    def _scan_plate(self):
+        return random.choice(self.carpark.plates)
