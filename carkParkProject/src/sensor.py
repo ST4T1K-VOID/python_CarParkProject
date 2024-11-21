@@ -11,7 +11,7 @@ class Sensor(ABC):
     def update_carpark_status(self, plate):
         pass
 
-    def detect_vehicle(self, plate):
+    def detect_vehicle(self):
         plate = self._scan_plate()
         self.update_carpark_status(plate)
 
