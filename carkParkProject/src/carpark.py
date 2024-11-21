@@ -15,7 +15,7 @@ class CarPark:
         self.config_file.touch(exist_ok=True)
 
     def register(self, component):
-        if not isinstance(component, (Sensor or Display)):
+        if not isinstance(component, (Sensor, Display)):
             raise TypeError('Component must be a Sensor or a Display')
 
         if isinstance(component, Sensor):
