@@ -34,7 +34,7 @@ class CarPark:
             if plate_item == plate:
                 self.plates.remove(plate)
                 return
-        raise Exception('plate not found')
+        raise KeyError('plate not found')
 
     def update_display(self):
         display_info = {"available bays": self.available_bays, "Temperature": 25, "Time": {datetime.datetime.now()}}
