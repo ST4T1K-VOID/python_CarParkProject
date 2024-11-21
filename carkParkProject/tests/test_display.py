@@ -12,6 +12,7 @@ class TestDisplay(unittest.TestCase):
         self.assertEqual(self.display.id, 1)
         self.assertEqual(self.display.message, "Test Display")
         self.assertEqual(self.display.is_on, True)
+        self.assertIsInstance(self.display.car_park, CarPark)
 
     def test_update(self):
         self.display.update({"message": "Updated message"})
