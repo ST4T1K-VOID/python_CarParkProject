@@ -11,8 +11,8 @@ class CarPark:
         self.plates = plates or []
         self.sensors = sensors or []
         self.displays = displays or []
-        self.config_file = config_file if isinstance(config_file, Path) else Path(config_file)
-        self.config_file.touch(exist_ok=True)
+        self.config_file = config_file
+        self.write_config()
 
     def register(self, component):
         if not isinstance(component, (Sensor, Display)):
@@ -46,13 +46,13 @@ class CarPark:
             display.update(display_info)
 
     def write_config(self):
-        with (self.config_file.open('W')) as file:
+        with open(self.config_file, "w") as file:
               json.dump({"Location": self.location, "Capacity": self.capacity},file)
 
     @classmethod
     def from_config(cls, file_path="config.json"):
         file_path = (file_path if isinstance(file_path, Path) else Path(file_path))
-        with file_path.open("R") as file:
+        with file_path.open() as file:
             config = json.load(file)
             return cls(config["Location"], config["Capacity"])
 
